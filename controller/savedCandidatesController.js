@@ -8,7 +8,7 @@ exports.saveCandidate = async (req, res) => {
     const { id } = req.params
     //console.log(id);
     try {
-        const existingProfile = await savedcandidates.findOne({ profileid: id })
+        const existingProfile = await savedcandidates.findOne({ profileid: id,adminId })
         if (existingProfile) {
             res.status(406).json(`profile already saved`)
         } else {
